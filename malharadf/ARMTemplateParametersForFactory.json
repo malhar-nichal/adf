@@ -14,11 +14,20 @@
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
+		"FileServer1_password": {
+			"value": ""
+		},
 		"SqlServer1_connectionString": {
 			"value": ""
 		},
 		"SqlServerLS_connectionString": {
 			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "G:\\LTI"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "laptop-8gffogjo\\malha"
 		},
 		"trigger1_properties_Task2_parameters_sheetname": {
 			"value": [
