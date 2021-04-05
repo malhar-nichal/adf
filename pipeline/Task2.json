@@ -35,14 +35,15 @@
 									}
 								},
 								"sink": {
-									"type": "SqlDWSink",
-									"allowPolyBase": true,
-									"polyBaseSettings": {
-										"rejectValue": 0,
-										"rejectType": "value",
-										"useTypeDefault": false
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
 									},
-									"tableOption": "autoCreate"
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
 								},
 								"enableStaging": true,
 								"stagingSettings": {
@@ -50,15 +51,24 @@
 										"referenceName": "AzureBlobStorage1",
 										"type": "LinkedServiceReference"
 									},
-									"path": "output"
+									"path": "input",
+									"enableCompression": true
+								},
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
 								}
 							},
 							"inputs": [
 								{
-									"referenceName": "Excel1",
+									"referenceName": "Excel2",
 									"type": "DatasetReference",
 									"parameters": {
-										"sheetname": {
+										"sheet": {
 											"value": "@item()",
 											"type": "Expression"
 										}
@@ -67,8 +77,14 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSynapseAnalyticsTable1",
-									"type": "DatasetReference"
+									"referenceName": "DelimitedText2",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
