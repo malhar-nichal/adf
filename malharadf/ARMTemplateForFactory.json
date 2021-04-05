@@ -256,7 +256,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"tablename": {
-													"value": "@item().name",
+													"value": "@concat(item().name , 'N')",
 													"type": "Expression"
 												}
 											}
@@ -706,7 +706,7 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "ndbo",
+					"schema": "dbo",
 					"table": {
 						"value": "@dataset().tablename",
 						"type": "Expression"

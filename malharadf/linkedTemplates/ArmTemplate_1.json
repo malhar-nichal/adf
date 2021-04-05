@@ -196,7 +196,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"tablename": {
-													"value": "@item().name",
+													"value": "@concat(item().name , 'N')",
 													"type": "Expression"
 												}
 											}
