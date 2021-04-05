@@ -310,9 +310,9 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "ndbo",
+					"schema": "dbo",
 					"table": {
-						"value": "@dataset().tablename",
+						"value": "@concat ('new ', @dataset().tablename)",
 						"type": "Expression"
 					}
 				}
