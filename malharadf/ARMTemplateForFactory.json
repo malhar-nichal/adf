@@ -26,6 +26,20 @@
 		"SqlServerLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
+		},
+		"trigger1_properties_Task2_parameters_sheetname": {
+			"type": "array",
+			"defaultValue": [
+				"Customer",
+				"Product",
+				"Orders",
+				"Location",
+				"Order_Details"
+			]
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/05f80b66-55f5-4363-81ad-c172940fc8e7/resourceGroups/malharRg/providers/Microsoft.Storage/storageAccounts/malharacc"
 		}
 	},
 	"variables": {
@@ -1448,6 +1462,39 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable5')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable6')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Task2",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"sheetname": "[parameters('trigger1_properties_Task2_parameters_sheetname')]"
+						}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/input/blobs/",
+					"blobPathEndsWith": ".xlsx",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Task2')]"
 			]
 		}
 	]
