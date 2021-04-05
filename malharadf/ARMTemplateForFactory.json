@@ -679,7 +679,7 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": {
-						"value": "@concat ('new ', @dataset().tablename)",
+						"value": "@concat ('new ', dataset().tablename)",
 						"type": "Expression"
 					}
 				}
