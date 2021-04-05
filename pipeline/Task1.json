@@ -60,9 +60,9 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureSqlSource",
+									"type": "SqlServerSource",
 									"sqlReaderQuery": {
-										"value": "select * from [dbo].[EmployeeDepartmentHistory] where departmentid = @{item().departmentid}",
+										"value": "select departmentid , name  from HumanResources.Department  where departmentid = @{item().departmentid}",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -84,7 +84,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureSqlTable7",
+									"referenceName": "SqlServerTable4",
 									"type": "DatasetReference"
 								}
 							],
