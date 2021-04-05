@@ -62,7 +62,7 @@
 								"source": {
 									"type": "SqlServerSource",
 									"sqlReaderQuery": {
-										"value": "select departmentid , name  from HumanResources.Department  where departmentid = @{item().departmentid}",
+										"value": "select *  from HumanResources.EmployeeDepartmentHistory  where departmentid = @{item().departmentid}",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
