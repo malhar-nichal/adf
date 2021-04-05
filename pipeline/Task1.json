@@ -84,7 +84,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SqlServerTable4",
+									"referenceName": "SqlServerTable5",
 									"type": "DatasetReference"
 								}
 							],
