@@ -35,15 +35,14 @@
 									}
 								},
 								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
+									"type": "SqlDWSink",
+									"allowPolyBase": true,
+									"polyBaseSettings": {
+										"rejectValue": 0,
+										"rejectType": "value",
+										"useTypeDefault": true
 									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
+									"tableOption": "autoCreate"
 								},
 								"enableStaging": true,
 								"stagingSettings": {
@@ -53,14 +52,6 @@
 									},
 									"path": "input",
 									"enableCompression": true
-								},
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
 								}
 							},
 							"inputs": [
@@ -77,10 +68,10 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DelimitedText2",
+									"referenceName": "AzureSynapseAnalyticsTable3",
 									"type": "DatasetReference",
 									"parameters": {
-										"filename": {
+										"sa": {
 											"value": "@item()",
 											"type": "Expression"
 										}
