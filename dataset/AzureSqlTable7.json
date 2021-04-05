@@ -1,0 +1,46 @@
+{
+	"name": "AzureSqlTable7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BusinessEntityID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DepartmentID",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "ShiftID",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "StartDate",
+				"type": "date"
+			},
+			{
+				"name": "EndDate",
+				"type": "date"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EmployeeDepartmentHistory"
+		}
+	}
+}
