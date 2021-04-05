@@ -310,7 +310,7 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "newdbo",
+					"schema": "ndbo",
 					"table": {
 						"value": "@dataset().tablename",
 						"type": "Expression"
