@@ -1,0 +1,9 @@
+{
+	"name": "malharadf",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0079a8d9-237b-43c6-8ee9-4cf6369cfcc1",
+		"tenantId": "1e8a73e5-06f8-49ac-9a36-10703dfb14f7"
+	}
+}
