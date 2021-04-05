@@ -252,7 +252,7 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "AzureSqlTable8",
+											"referenceName": "AzureSqlTable9",
 											"type": "DatasetReference",
 											"parameters": {
 												"tablename": {
@@ -272,7 +272,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SqlServerTable2')]",
 				"[concat(variables('factoryId'), '/datasets/SqlServerTable5')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable8')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable9')]"
 			]
 		},
 		{
@@ -677,9 +677,38 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
+					"schema": "SalesLT",
 					"table": {
-						"value": "@concat ('new ', dataset().tablename)",
+						"value": "@dataset().tablename",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabaseLS')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabaseLS",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"tablename": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "ndbo",
+					"table": {
+						"value": "@dataset().tablename",
 						"type": "Expression"
 					}
 				}
