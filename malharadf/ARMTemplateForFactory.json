@@ -223,7 +223,7 @@
 										"source": {
 											"type": "SqlServerSource",
 											"sqlReaderQuery": {
-												"value": "select *  from HumanResources.EmployeeDepartmentHistory  join HumanResources.Employee on HumanResources.EmployeeDepartmentHistory.BusinessEntityID = HumanResources.Employee.BusinessEntityID  where departmentid =@{item().departmentid}",
+												"value": "select DepartmentID, JobTitle from HumanResources.EmployeeDepartmentHistory  join HumanResources.Employee on HumanResources.EmployeeDepartmentHistory.BusinessEntityID = HumanResources.Employee.BusinessEntityID  where departmentid =@{item().departmentid}",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
@@ -256,7 +256,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"tablename": {
-													"value": "@concat(item().name , 'N')",
+													"value": "@item().name",
 													"type": "Expression"
 												}
 											}
@@ -706,7 +706,7 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
+					"schema": "ndbo",
 					"table": {
 						"value": "@dataset().tablename",
 						"type": "Expression"
