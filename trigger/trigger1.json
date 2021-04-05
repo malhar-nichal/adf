@@ -1,0 +1,34 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Task2",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"sheetname": [
+						"Customer",
+						"Product",
+						"Orders",
+						"Location",
+						"Order_Details"
+					]
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/",
+			"blobPathEndsWith": ".xlsx",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/05f80b66-55f5-4363-81ad-c172940fc8e7/resourceGroups/malharRg/providers/Microsoft.Storage/storageAccounts/malharacc",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
