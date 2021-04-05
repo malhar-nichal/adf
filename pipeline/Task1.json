@@ -90,7 +90,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable8",
+									"referenceName": "AzureSqlTable9",
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
