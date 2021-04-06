@@ -1,0 +1,32 @@
+{
+	"name": "AzureSqlTable21",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabasenew",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BookID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Book Title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Book Price",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "books"
+		}
+	}
+}
