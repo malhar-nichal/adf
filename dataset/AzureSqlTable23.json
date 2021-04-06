@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTable23",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabasenew",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tempdb"
+		}
+	}
+}
