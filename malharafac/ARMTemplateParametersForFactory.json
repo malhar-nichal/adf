@@ -11,6 +11,9 @@
 		"AzureBlobStorage2_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureDataLakeStore1_servicePrincipalKey": {
 			"value": ""
 		},
@@ -35,8 +38,14 @@
 		"SqlServer2_connectionString": {
 			"value": ""
 		},
+		"SqlServer3_connectionString": {
+			"value": ""
+		},
 		"SqlServerLS_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://malharac.dfs.core.windows.net"
 		},
 		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
 			"value": "https://malgen1.azuredatalakestore.net/webhdfs/v1"
