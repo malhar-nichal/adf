@@ -252,6 +252,26 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'malharafac_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "malharafac_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger1_properties_Task2_parameters_sheetname": {
 						"value": "[parameters('trigger1_properties_Task2_parameters_sheetname')]"
@@ -262,7 +282,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'malharafac_ArmTemplate_2')]"
+				"[resourceId('Microsoft.Resources/deployments', 'malharafac_ArmTemplate_3')]"
 			]
 		}
 	]
