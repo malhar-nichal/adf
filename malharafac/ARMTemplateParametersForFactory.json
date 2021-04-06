@@ -11,6 +11,9 @@
 		"AzureBlobStorage2_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStore1_servicePrincipalKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
@@ -34,6 +37,21 @@
 		},
 		"SqlServerLS_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://malgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_servicePrincipalId": {
+			"value": "bc2d8be4-6515-429b-8add-4d1bf2e9b728"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_tenant": {
+			"value": "921669b7-76fb-4058-b5e2-cc266af1922d"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+			"value": "1d358df2-f6b6-41c9-91b8-ee4655073e1c"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+			"value": "malharrg"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"value": "G:\\LTI"
