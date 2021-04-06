@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable15",
+						"referenceName": "AzureSqlTable19",
 						"type": "DatasetReference"
 					},
 					"name": "salesproduct"
