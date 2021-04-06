@@ -7,7 +7,7 @@
 		"typeProperties": {
 			"host": "G:\\LTI",
 			"userId": "laptop-8gffogjo\\malha",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwOTAwNjA1NS03NTlhLTQwOTEtYmQzNi0zZTgwMjhiOWZkMTEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNjA5MDY5NS1lODFmLTRmYWItYWZlMi05OTIyZjZmZGUzODkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
