@@ -1,0 +1,61 @@
+{
+	"name": "AzureSqlTable17",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProductId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "color",
+				"type": "nvarchar"
+			},
+			{
+				"name": "standardcost",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "listprise",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "productcategoryid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "hashkey",
+				"type": "nvarchar"
+			},
+			{
+				"name": "inserteddate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "updateddate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimProduct"
+		}
+	}
+}
