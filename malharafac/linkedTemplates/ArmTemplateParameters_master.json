@@ -14,6 +14,9 @@
 		"AzureSqlDatabaseLS_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabasenew_connectionString": {
+			"value": ""
+		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
@@ -21,6 +24,9 @@
 			"value": ""
 		},
 		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
 			"value": ""
 		},
 		"SqlServerLS_connectionString": {
