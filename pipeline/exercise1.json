@@ -37,7 +37,25 @@
 				"inputs": [
 					{
 						"referenceName": "SqlServerTable7",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"srv": {
+								"value": "@pipeline().parameters.srv",
+								"type": "Expression"
+							},
+							"datab": {
+								"value": "@pipeline().parameters.datab",
+								"type": "Expression"
+							},
+							"usr": {
+								"value": "@pipeline().parameters.usr",
+								"type": "Expression"
+							},
+							"psw": {
+								"value": "@pipeline().parameters.psw",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -48,6 +66,20 @@
 				]
 			}
 		],
+		"parameters": {
+			"srv": {
+				"type": "string"
+			},
+			"datab": {
+				"type": "string"
+			},
+			"usr": {
+				"type": "string"
+			},
+			"psw": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
