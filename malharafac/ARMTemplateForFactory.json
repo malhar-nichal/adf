@@ -1000,7 +1000,7 @@
 										"source": {
 											"type": "SqlServerSource",
 											"sqlReaderQuery": {
-												"value": "\nselect * from Sales.SalesOrderDetail where modifieddate = @{item().dt}",
+												"value": "\nselect * from Sales.SalesOrderDetail where modifieddate = '@{item().dt}'",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
