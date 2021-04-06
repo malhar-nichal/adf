@@ -17,7 +17,12 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "exercise5df",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"sink1": {
+								"filename": "salesbysaleperson"
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
