@@ -26,10 +26,10 @@
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat(dataset().year,'/',dataset().month)",
+					"value": "@concat(dataset().year,'\\',dataset().month)",
 					"type": "Expression"
 				},
-				"container": "salesdatacontainer"
+				"container": "salesdata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
