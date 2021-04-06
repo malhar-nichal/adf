@@ -1,0 +1,28 @@
+{
+	"name": "AzureSqlTable24",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabasenew",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "salespersonid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "totaldue",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tempdb"
+		}
+	}
+}
