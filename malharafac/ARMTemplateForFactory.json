@@ -459,7 +459,24 @@
 							{
 								"referenceName": "SqlServerTable7",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"srv": {
+										"value": "@pipeline().parameters.srv",
+										"type": "Expression"
+									},
+									"datab": {
+										"value": "@pipeline().parameters.datab",
+										"type": "Expression"
+									},
+									"usr": {
+										"value": "@pipeline().parameters.usr",
+										"type": "Expression"
+									},
+									"psw": {
+										"value": "@pipeline().parameters.psw",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
@@ -471,6 +488,20 @@
 						]
 					}
 				],
+				"parameters": {
+					"srv": {
+						"type": "string"
+					},
+					"datab": {
+						"type": "string"
+					},
+					"usr": {
+						"type": "string"
+					},
+					"psw": {
+						"type": "string"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -2365,7 +2396,39 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "SqlServer2",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"servername": {
+							"value": "@dataset().srv",
+							"type": "Expression"
+						},
+						"databasename": {
+							"value": "@dataset().datab",
+							"type": "Expression"
+						},
+						"username": {
+							"value": "@dataset().usr",
+							"type": "Expression"
+						},
+						"password": {
+							"value": "@dataset().psw",
+							"type": "Expression"
+						}
+					}
+				},
+				"parameters": {
+					"srv": {
+						"type": "string"
+					},
+					"datab": {
+						"type": "string"
+					},
+					"usr": {
+						"type": "string"
+					},
+					"psw": {
+						"type": "string"
+					}
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
