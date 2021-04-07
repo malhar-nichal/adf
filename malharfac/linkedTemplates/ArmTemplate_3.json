@@ -1262,7 +1262,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "books"
+					"table": "customer_table"
 				}
 			},
 			"dependsOn": []
