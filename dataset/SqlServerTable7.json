@@ -3,25 +3,7 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SqlServer2",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"servername": {
-					"value": "@dataset().srv",
-					"type": "Expression"
-				},
-				"databasename": {
-					"value": "@dataset().datab",
-					"type": "Expression"
-				},
-				"username": {
-					"value": "@dataset().usr",
-					"type": "Expression"
-				},
-				"password": {
-					"value": "@dataset().psw",
-					"type": "Expression"
-				}
-			}
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"srv": {

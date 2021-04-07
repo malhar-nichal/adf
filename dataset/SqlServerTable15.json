@@ -1,0 +1,32 @@
+{
+	"name": "SqlServerTable15",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BookID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Book Title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Book Price",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "books"
+		}
+	}
+}

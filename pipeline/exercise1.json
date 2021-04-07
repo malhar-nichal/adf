@@ -36,26 +36,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SqlServerTable7",
-						"type": "DatasetReference",
-						"parameters": {
-							"srv": {
-								"value": "@pipeline().parameters.srv",
-								"type": "Expression"
-							},
-							"datab": {
-								"value": "@pipeline().parameters.datab",
-								"type": "Expression"
-							},
-							"usr": {
-								"value": "@pipeline().parameters.usr",
-								"type": "Expression"
-							},
-							"psw": {
-								"value": "@pipeline().parameters.psw",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "SqlServerTable15",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
