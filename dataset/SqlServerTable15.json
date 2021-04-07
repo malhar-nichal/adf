@@ -2,8 +2,28 @@
 	"name": "SqlServerTable15",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SqlServer4",
-			"type": "LinkedServiceReference"
+			"referenceName": "SqlServer2",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": {
+					"value": "@dataset().srv",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"usr": {
+				"type": "string"
+			},
+			"srv": {
+				"type": "string"
+			},
+			"psw": {
+				"type": "string"
+			},
+			"db": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
