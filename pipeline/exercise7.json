@@ -16,13 +16,13 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource",
-						"sqlReaderQuery": "\nselect distinct year (ModifiedDate ) as y , month (ModifiedDate) as m , day (ModifiedDate) as d , modifieddate as dt from Sales.SalesOrderDetail ",
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select distinct month (ModifiedDate) as m , year (ModifiedDate ) as y , day (ModifiedDate) as d, ModifiedDate as dt from SalesLT.SalesOrderDetail",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SqlServerTable11",
+						"referenceName": "AzureSqlTable27",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -60,9 +60,9 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "SqlServerSource",
+									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "\nselect * from Sales.SalesOrderDetail where modifieddate = '@{item().dt}'",
+										"value": "select * from SalesLT.SalesOrderDetail where  modifieddate = '@{item().dt}'",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -91,7 +91,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SqlServerTable14",
+									"referenceName": "AzureSqlTable26",
 									"type": "DatasetReference"
 								}
 							],
