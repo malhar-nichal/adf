@@ -1,0 +1,84 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "malharfac"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStore1_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLS_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabasenew_connectionString": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
+			"value": ""
+		},
+		"SqlServer3_connectionString": {
+			"value": ""
+		},
+		"SqlServerLS_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://malharac.dfs.core.windows.net"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://malgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_servicePrincipalId": {
+			"value": "bc2d8be4-6515-429b-8add-4d1bf2e9b728"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_tenant": {
+			"value": "921669b7-76fb-4058-b5e2-cc266af1922d"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+			"value": "1d358df2-f6b6-41c9-91b8-ee4655073e1c"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+			"value": "malharrg"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "G:\\LTI"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "laptop-8gffogjo\\malha"
+		},
+		"trigger1_properties_Task2_parameters_sheetname": {
+			"value": [
+				"Customer",
+				"Product",
+				"Orders",
+				"Location",
+				"Order_Details"
+			]
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/05f80b66-55f5-4363-81ad-c172940fc8e7/resourceGroups/malharRg/providers/Microsoft.Storage/storageAccounts/malharacc"
+		}
+	}
+}
