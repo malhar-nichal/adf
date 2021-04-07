@@ -1,0 +1,29 @@
+{
+	"name": "SqlServer5",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"srv": {
+				"type": "String"
+			},
+			"usr": {
+				"type": "String"
+			},
+			"db": {
+				"type": "String"
+			},
+			"psw": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=@{linkedService().srv};Initial Catalog=@{linkedService().db};User ID=@{linkedService().usr};Password=@{linkedService().psw}"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
