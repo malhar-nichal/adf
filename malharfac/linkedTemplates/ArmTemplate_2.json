@@ -58,6 +58,9 @@
 					},
 					"dy": {
 						"type": "string"
+					},
+					"time": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -66,7 +69,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@dataset().dy",
+							"value": "@concat (dataset().dy, ' ', dataset().time)",
 							"type": "Expression"
 						},
 						"folderPath": {

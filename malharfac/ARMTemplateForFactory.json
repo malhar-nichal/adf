@@ -954,7 +954,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "AzureSqlSource",
-								"sqlReaderQuery": "select distinct month (ModifiedDate) as m , year (ModifiedDate ) as y , day (ModifiedDate) as d, ModifiedDate as dt from SalesLT.SalesOrderDetail",
+								"sqlReaderQuery": "select distinct month (ModifiedDate) as m , year (ModifiedDate ) as y , day (ModifiedDate) as d, ModifiedDate as dt , cast (modifieddate as time) as t from SalesLT.SalesOrderDetail",
 								"queryTimeout": "02:00:00",
 								"partitionOption": "None"
 							},
@@ -1049,6 +1049,10 @@
 												},
 												"dy": {
 													"value": "@item().d",
+													"type": "Expression"
+												},
+												"time": {
+													"value": "@item().t",
 													"type": "Expression"
 												}
 											}
@@ -2721,6 +2725,9 @@
 					},
 					"dy": {
 						"type": "string"
+					},
+					"time": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -2729,7 +2736,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@dataset().dy",
+							"value": "@concat (dataset().dy, ' ', dataset().time)",
 							"type": "Expression"
 						},
 						"folderPath": {
