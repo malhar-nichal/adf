@@ -27,6 +27,49 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer3",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"tablename": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "HumanResources",
+					"table": {
+						"value": "@dataset().tablename",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
@@ -401,26 +444,9 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SqlServerTable7",
+								"referenceName": "SqlServerTable15",
 								"type": "DatasetReference",
-								"parameters": {
-									"srv": {
-										"value": "@pipeline().parameters.srv",
-										"type": "Expression"
-									},
-									"datab": {
-										"value": "@pipeline().parameters.datab",
-										"type": "Expression"
-									},
-									"usr": {
-										"value": "@pipeline().parameters.usr",
-										"type": "Expression"
-									},
-									"psw": {
-										"value": "@pipeline().parameters.psw",
-										"type": "Expression"
-									}
-								}
+								"parameters": {}
 							}
 						],
 						"outputs": [
@@ -711,7 +737,10 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable8')]",
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable9')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/exercise5')]",

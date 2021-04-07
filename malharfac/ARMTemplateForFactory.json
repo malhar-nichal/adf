@@ -55,6 +55,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
 		},
+		"SqlServer4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer4'"
+		},
 		"SqlServerLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
@@ -497,26 +501,9 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SqlServerTable7",
+								"referenceName": "SqlServerTable15",
 								"type": "DatasetReference",
-								"parameters": {
-									"srv": {
-										"value": "@pipeline().parameters.srv",
-										"type": "Expression"
-									},
-									"datab": {
-										"value": "@pipeline().parameters.datab",
-										"type": "Expression"
-									},
-									"usr": {
-										"value": "@pipeline().parameters.usr",
-										"type": "Expression"
-									},
-									"psw": {
-										"value": "@pipeline().parameters.psw",
-										"type": "Expression"
-									}
-								}
+								"parameters": {}
 							}
 						],
 						"outputs": [
@@ -545,7 +532,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SqlServerTable7')]",
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable15')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable20')]"
 			]
 		},
@@ -1072,7 +1059,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/exercise7_copy1')]",
+			"name": "[concat(parameters('factoryName'), '/exercise7_Incremental')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -2337,7 +2324,7 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "books"
+					"table": "books1"
 				}
 			},
 			"dependsOn": [
@@ -4024,6 +4011,43 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable15')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "BookID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Book Title",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Book Price",
+						"type": "money",
+						"precision": 19,
+						"scale": 4
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "books"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/SqlServer4')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SqlServerTable2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -4242,25 +4266,7 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "SqlServer2",
-					"type": "LinkedServiceReference",
-					"parameters": {
-						"servername": {
-							"value": "@dataset().srv",
-							"type": "Expression"
-						},
-						"databasename": {
-							"value": "@dataset().datab",
-							"type": "Expression"
-						},
-						"username": {
-							"value": "@dataset().usr",
-							"type": "Expression"
-						},
-						"password": {
-							"value": "@dataset().psw",
-							"type": "Expression"
-						}
-					}
+					"type": "LinkedServiceReference"
 				},
 				"parameters": {
 					"srv": {
@@ -4536,6 +4542,25 @@
 				"type": "SqlServer",
 				"typeProperties": {
 					"connectionString": "[parameters('SqlServer3_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServer4')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('SqlServer4_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "integrationRuntime1",

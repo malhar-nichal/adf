@@ -23,9 +23,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
 		},
-		"SqlServerLS_connectionString": {
+		"SqlServer4_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
+			"metadata": "Secure string for 'connectionString' of 'SqlServer4'"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",
@@ -599,14 +599,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SqlServerLS')]",
+			"name": "[concat(parameters('factoryName'), '/SqlServer4')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "SqlServer",
 				"typeProperties": {
-					"connectionString": "[parameters('SqlServerLS_connectionString')]"
+					"connectionString": "[parameters('SqlServer4_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "integrationRuntime1",

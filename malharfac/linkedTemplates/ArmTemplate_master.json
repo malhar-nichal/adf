@@ -55,6 +55,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
 		},
+		"SqlServer4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer4'"
+		},
 		"SqlServerLS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLS'"
@@ -224,8 +228,8 @@
 					"SqlServer3_connectionString": {
 						"value": "[parameters('SqlServer3_connectionString')]"
 					},
-					"SqlServerLS_connectionString": {
-						"value": "[parameters('SqlServerLS_connectionString')]"
+					"SqlServer4_connectionString": {
+						"value": "[parameters('SqlServer4_connectionString')]"
 					},
 					"FileServer1_properties_typeProperties_host": {
 						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
@@ -252,6 +256,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServerLS_connectionString": {
+						"value": "[parameters('SqlServerLS_connectionString')]"
 					}
 				}
 			},
