@@ -446,7 +446,24 @@
 							{
 								"referenceName": "SqlServerTable15",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"usr": {
+										"value": "@pipeline().parameters.usr",
+										"type": "Expression"
+									},
+									"srv": {
+										"value": "@pipeline().parameters.srv",
+										"type": "Expression"
+									},
+									"psw": {
+										"value": "@pipeline().parameters.psw",
+										"type": "Expression"
+									},
+									"db": {
+										"value": "@pipeline().parameters.datab",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
