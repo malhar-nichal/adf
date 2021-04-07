@@ -4039,6 +4039,10 @@
 						"servername": {
 							"value": "@dataset().srv",
 							"type": "Expression"
+						},
+						"databasename": {
+							"value": "@dataset().db",
+							"type": "Expression"
 						}
 					}
 				},
