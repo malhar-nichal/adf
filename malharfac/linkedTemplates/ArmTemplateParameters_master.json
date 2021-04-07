@@ -44,6 +44,9 @@
 		"SqlServer4_connectionString": {
 			"value": ""
 		},
+		"SqlServer5_connectionString": {
+			"value": ""
+		},
 		"SqlServerLS_connectionString": {
 			"value": ""
 		},
