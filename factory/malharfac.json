@@ -1,0 +1,9 @@
+{
+	"name": "malharfac",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f4572d3f-9ea2-47cc-9bdf-9fc241624660",
+		"tenantId": "921669b7-76fb-4058-b5e2-cc266af1922d"
+	}
+}
