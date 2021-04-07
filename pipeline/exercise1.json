@@ -36,7 +36,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SqlServerTable15",
+						"referenceName": "SqlServerTable17",
 						"type": "DatasetReference",
 						"parameters": {
 							"usr": {
@@ -47,12 +47,12 @@
 								"value": "@pipeline().parameters.srv",
 								"type": "Expression"
 							},
-							"psw": {
-								"value": "@pipeline().parameters.psw",
-								"type": "Expression"
-							},
 							"db": {
 								"value": "@pipeline().parameters.datab",
+								"type": "Expression"
+							},
+							"psw": {
+								"value": "@pipeline().parameters.psw",
 								"type": "Expression"
 							}
 						}

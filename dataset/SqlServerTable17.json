@@ -1,0 +1,30 @@
+{
+	"name": "SqlServerTable17",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer5",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"usr": {
+				"type": "string"
+			},
+			"srv": {
+				"type": "string"
+			},
+			"db": {
+				"type": "string"
+			},
+			"psw": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "books"
+		}
+	}
+}
