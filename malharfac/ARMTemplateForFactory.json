@@ -1150,7 +1150,7 @@
 										"source": {
 											"type": "AzureSqlSource",
 											"sqlReaderQuery": {
-												"value": "select * from SalesLT.SalesOrderDetail where  modifieddate = '@{item().dt}' and  modifieddate > '@{activity('currentwatermark').output.firstRow.watermarkvalue}'",
+												"value": "select * from SalesLT.SalesOrderDetail where  modifieddate = '@{item().dt}' and  modifieddate > '@{activity('lastwatermark').output.firstRow.watermarkvalue}'",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
