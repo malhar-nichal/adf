@@ -1,0 +1,9 @@
+{
+	"name": "ADFTrainingFreeTrial",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1b313956-2225-49ef-838a-fe823375a9e8",
+		"tenantId": "79acbec8-4fe8-49c5-9247-1390e0665be0"
+	}
+}
